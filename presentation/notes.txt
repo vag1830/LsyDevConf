@@ -1,0 +1,56 @@
+Introduction 
+	- purpose => explaining the title
+	- Definition of Agile/Agility
+	- Velocity/Time diagram
+	- Question to the audience 
+		- diff architecture plus solid - show of hands
+		
+- Demo
+	- Explain the scenario => show a diagram of the dependency
+		TBD
+	- Live code changes based on the scenario
+	- show a diagram for each architecture good/bad
+	
+- Architecture 	
+	- What just happend ? 
+		- why one company was faster than the other 
+	- show diagram for onion/hexagonal/clean architecture
+	- explain that they are the same 
+		- the most important thing is managing dependencies
+		- identify boundaries
+			- external/internal/own code 
+			- show the adapter image
+	- protect the application 
+		- bussiness logic the real value of your application 
+		- what ppl think when they hear application => an api or a desktop application => connect with frontend/backend misconception
+		- testability - cover with unit tests 100%	
+
+	- protect the application 
+		- bussiness logic the real value of your application 
+		- what ppl think when they hear application => an api or a desktop application => connect with frontend/backend misconception
+		- testability - cover with unit tests 100%		
+	
+	- Show a 2nd example Geodb API ?
+	- Show a 3rd example ?
+
+- Conclusion - take aways	
+	- when starting a new project, differ important decisions (which DB)
+	- Work with domain experts to define the domain entities and develop and common understanding a common language to communicate with 
+	- analyze dependencies
+	- keep the applications decoupled from the boundaries 
+		- ideally the application layer should have 0 dependencies
+	- keep all these ideas in the back of your heads and dont overengineer
+		- for example simple queries or report generation could go directrly to the DB
+	- Unit test
+	
+	REFERENCES for the books or something (akrivws)
+	
+	- the most important thing in software development is COMMUNICATION 
+		this is not a one man job, It used to be in the past but its not any more.
+		
+- Questions 
+	
+		
+
+
+	
