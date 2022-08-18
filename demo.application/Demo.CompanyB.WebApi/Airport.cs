@@ -1,6 +1,6 @@
-﻿namespace Demo.WebApi.Resources;
+﻿namespace Demo.CompanyB.WebApi;
 
-public class CreateResponse
+public class Airport
 {
     public int Id { get; set; }
 
