@@ -22,7 +22,7 @@ public class Database
         return airport;
     }
 
-    private static List<Airport> Airports = new List<Airport> {
+    private static readonly List<Airport> Airports = new() {
             new Airport {
                 Id = 1,
                 Icao = "LSZH",

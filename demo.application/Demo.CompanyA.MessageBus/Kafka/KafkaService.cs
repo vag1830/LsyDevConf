@@ -27,7 +27,7 @@ public class KafkaService : IMessageService
         Send(configuration.Topic, kafkaMessage);
     }
 
-    private void Send(string topic, Message<string, string> message)
+    private void Send(string? topic, Message<string, string> message)
     {
         using var producer = CreateProducer();
 

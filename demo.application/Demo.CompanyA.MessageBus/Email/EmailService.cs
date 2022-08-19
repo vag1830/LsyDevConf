@@ -35,7 +35,7 @@ public class EmailService : IMessageService
         Send(emailMessage);
     }
 
-    private void Send(MimeMessage message)
+    private static void Send(MimeMessage message)
     {
         using var client = new SmtpClient();
         client.Connect("mail.lidozrh.ch", 25, SecureSocketOptions.None);

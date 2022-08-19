@@ -36,16 +36,16 @@ public class AirportRepository : IAirportRepository
         await Task.CompletedTask;
     }
 
-    private List<Airport> Airports = new List<Airport> {
-            new Airport {
-                Id = 1,
-                IcaoCode = "LSZH",
-                Name = "Zurich"
-            },
-            new Airport {
-                Id = 2,
-                IcaoCode = "LGAV",
-                Name = "Athens International Airport, Eleftherios Venizelos"
-            }
-        };
+    private readonly List<Airport> Airports = new() {
+        new Airport {
+            Id = 1,
+            IcaoCode = "LSZH",
+            Name = "Zurich"
+        },
+        new Airport {
+            Id = 2,
+            IcaoCode = "LGAV",
+            Name = "Athens International Airport, Eleftherios Venizelos"
+        }
+    };
 }

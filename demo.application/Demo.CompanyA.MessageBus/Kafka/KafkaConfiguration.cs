@@ -2,5 +2,5 @@
 
 public class KafkaConfiguration
 {
-    public string Topic { get; set; }
+    public string? Topic { get; set; }
 }

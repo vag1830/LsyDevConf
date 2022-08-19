@@ -9,10 +9,5 @@ public abstract class Message<T>
 
     public string Type { get; set; }
 
-    public virtual T Payload { get; set; }
-}
-
-public interface IMessage
-{
-    string Type { get; set; }
+    public virtual T? Payload { get; set; }
 }

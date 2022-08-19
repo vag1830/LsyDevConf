@@ -1,7 +1,7 @@
 ﻿using Demo.Application.Boundaries.Configuration;
 using Demo.Application.Boundaries.MessageBus;
 using Demo.MessageBus.Email;
-using Demo.MessageBus.Kafka;
+// using Demo.MessageBus.Kafka;
 using Demo.MessageBus.Services;
 
 namespace Demo.WebApi.DIExtensions;
@@ -15,7 +15,7 @@ public static class MessageBusExtentions
         services.AddScoped<IMessageBus, MessageBus.MessageBus>();
 
         services.AddScoped<EmailService>();
-        services.AddScoped<KafkaService>();
+        // services.AddScoped<KafkaService>();
 
         services.AddTransient<MessageServiceResolver>(serviceProvider => key =>
         {
@@ -30,12 +30,12 @@ public static class MessageBusExtentions
                 resolvedServices.Add(emailService);
             }
 
-            if (configuration.IsKafkaEnabled)
-            {
-                var kafkaService = serviceProvider.GetRequiredService<KafkaService>();
+            //if (configuration.IsKafkaEnabled)
+            //{
+            //    var kafkaService = serviceProvider.GetRequiredService<KafkaService>();
 
-                resolvedServices.Add(kafkaService);
-            }
+            //    resolvedServices.Add(kafkaService);
+            //}
 
             return resolvedServices;
         });
