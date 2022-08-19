@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Application", "demo.application\Demo.Application.csproj", "{13BBF533-C14D-4D79-9987-0ACBF40393D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.CompanyA.Application", "Demo.CompanyA.application\Demo.CompanyA.Application.csproj", "{13BBF533-C14D-4D79-9987-0ACBF40393D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kafka", "kafka", "{43978546-8B5B-4AE8-8B69-0B85125DB6C5}"
 EndProject
@@ -11,17 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "producer", "producer\produc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consumer", "consumer\consumer.csproj", "{BCFB6192-84A9-48F2-B768-863263865AA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.WebApi", "Demo.WebApi\Demo.WebApi.csproj", "{37B01C4A-9F42-4539-84D1-E1B788537446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.CompanyA.WebApi", "Demo.CompanyA.WebApi\Demo.CompanyA.WebApi.csproj", "{37B01C4A-9F42-4539-84D1-E1B788537446}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Database", "Database\Demo.Database.csproj", "{46887B45-2EBF-4BA9-97D8-BEEB688922CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.CompanyA.Database", "Demo.CompanyA.Database\Demo.CompanyA.Database.csproj", "{46887B45-2EBF-4BA9-97D8-BEEB688922CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompanyA", "CompanyA", "{5C44E24E-800A-4104-AC33-BD7DC45324BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompanyB", "CompanyB", "{45890E46-98DA-4A6D-8ADC-C7617D1C373C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.MessageBus", "Demo.MessageBus\Demo.MessageBus.csproj", "{B641FFE7-0641-46E8-B20E-43CFDAD0F40E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.CompanyA.MessageBus", "Demo.CompanyA.MessageBus\Demo.CompanyA.MessageBus.csproj", "{B641FFE7-0641-46E8-B20E-43CFDAD0F40E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.CompanyB.WebApi", "Demo.CompanyB.WebApi\Demo.CompanyB.WebApi.csproj", "{DF63B842-C9C8-4644-A3E6-7854764E0DD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.CompanyB.WebApi", "Demo.CompanyB.WebApi\Demo.CompanyB.WebApi.csproj", "{DF63B842-C9C8-4644-A3E6-7854764E0DD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,8 +62,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{13BBF533-C14D-4D79-9987-0ACBF40393D9} = {5C44E24E-800A-4104-AC33-BD7DC45324BD}
 		{F286FAB9-B636-46BC-8C64-D0462C6C7755} = {43978546-8B5B-4AE8-8B69-0B85125DB6C5}
 		{BCFB6192-84A9-48F2-B768-863263865AA9} = {43978546-8B5B-4AE8-8B69-0B85125DB6C5}
+		{37B01C4A-9F42-4539-84D1-E1B788537446} = {5C44E24E-800A-4104-AC33-BD7DC45324BD}
+		{46887B45-2EBF-4BA9-97D8-BEEB688922CE} = {5C44E24E-800A-4104-AC33-BD7DC45324BD}
+		{B641FFE7-0641-46E8-B20E-43CFDAD0F40E} = {5C44E24E-800A-4104-AC33-BD7DC45324BD}
 		{DF63B842-C9C8-4644-A3E6-7854764E0DD6} = {45890E46-98DA-4A6D-8ADC-C7617D1C373C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

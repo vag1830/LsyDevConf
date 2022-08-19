@@ -7,10 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Confluent.Kafka" Version="1.9.2" />
-    <PackageReference Include="MailKit" Version="3.3.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.CompanyA.application\Demo.CompanyA.Application.csproj" />
+    <ProjectReference Include="..\Demo.CompanyA.Database\Demo.CompanyA.Database.csproj" />
+    <ProjectReference Include="..\Demo.CompanyA.MessageBus\Demo.CompanyA.MessageBus.csproj" />
   </ItemGroup>
 
 </Project>

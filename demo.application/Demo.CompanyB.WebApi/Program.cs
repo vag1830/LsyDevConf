@@ -52,7 +52,7 @@ app.MapPost("/airports", ([FromBody] Airport airport) =>
 
     if (configuration.GetValue<bool>("isKafkaEnabled"))
     {
-        var kafkaService = new EmailService(configuration);
+        var kafkaService = new KafkaService(configuration);
         kafkaService.Send(airport);
     }
 

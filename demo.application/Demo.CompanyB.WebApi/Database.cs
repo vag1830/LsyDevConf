@@ -25,12 +25,12 @@
         private static List<Airport> Airports = new List<Airport> {
             new Airport {
                 Id = 1,
-                IcaoCode = "LSZH",
+                Icao = "LSZH",
                 Name = "Zurich"
             },
             new Airport {
                 Id = 2,
-                IcaoCode = "LGAV",
+                Icao = "LGAV",
                 Name = "Athens International Airport, Eleftherios Venizelos"
             }
         };
