@@ -1,9 +1,8 @@
 ﻿using Demo.Application.Domain;
 
-namespace Demo.Application.Airports.GetAll
+namespace Demo.Application.Airports.GetAll;
+
+public interface IGetAllUseCase
 {
-    public interface IGetAllUseCase
-    {
-        Task<List<Airport>> Execute();
-    }
+    Task<List<Airport>> Execute();
 }

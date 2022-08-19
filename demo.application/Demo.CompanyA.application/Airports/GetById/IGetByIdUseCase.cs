@@ -1,9 +1,8 @@
 ﻿using Demo.Application.Domain;
 
-namespace Demo.Application.Airports.GetById
+namespace Demo.Application.Airports.GetById;
+
+public interface IGetByIdUseCase
 {
-    public interface IGetByIdUseCase
-    {
-        Task<Airport> Execute(int id);
-    }
+    Task<Airport> Execute(int id);
 }

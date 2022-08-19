@@ -2,10 +2,10 @@
 
 namespace Demo.Application.Boundaries.MessageBus.Messages;
 
-public class AirportCreatedMessage : Message<AirportPayload>
+public class AirportUpdatedMessage : Message<AirportPayload>
 {
-    public AirportCreatedMessage(Airport payload)
-        : base("airportCreated")
+    public AirportUpdatedMessage(Airport payload)
+        : base("airportUpdated")
     {
         Payload = new AirportPayload()
         {

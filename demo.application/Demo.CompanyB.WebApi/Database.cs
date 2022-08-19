@@ -1,28 +1,28 @@
-﻿namespace Demo.CompanyB.WebApi
+﻿namespace Demo.CompanyB.WebApi;
+
+public class Database
 {
-    public class Database
+    public static List<Airport> GetAllAirports()
     {
-        public static List<Airport> GetAllAirports()
-        {
-            return Airports;
-        }
+        return Airports;
+    }
 
-        public static Airport GetAirportById(int id)
-        {
-            return Airports.First(a => a.Id == id);
-        }
+    public static Airport GetAirportById(int id)
+    {
+        return Airports.First(a => a.Id == id);
+    }
 
-        public static Airport CreateAirport(Airport airport)
-        {
-            var id = Airports.Count + 1;
-            airport.Id = id;
+    public static Airport CreateAirport(Airport airport)
+    {
+        var id = Airports.Count + 1;
+        airport.Id = id;
 
-            Airports.Add(airport);
+        Airports.Add(airport);
 
-            return airport;
-        }
+        return airport;
+    }
 
-        private static List<Airport> Airports = new List<Airport> {
+    private static List<Airport> Airports = new List<Airport> {
             new Airport {
                 Id = 1,
                 Icao = "LSZH",
@@ -34,5 +34,4 @@
                 Name = "Athens International Airport, Eleftherios Venizelos"
             }
         };
-    }
 }

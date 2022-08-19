@@ -21,8 +21,8 @@ public class CreateUseCase : ICreateUseCase
 
     public async Task<Airport> Execute(CreateInput input)
     {
-        Airport airport = new() 
-        { 
+        Airport airport = new()
+        {
             IcaoCode = input.IcaoCode,
             Name = input.Name
         };

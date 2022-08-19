@@ -8,7 +8,9 @@ namespace Demo.WebApi.DIExtensions;
 
 public static class MessageBusExtentions
 {
-    public static IServiceCollection AddMessageBusServices(this IServiceCollection services, IConfigurationService configurationService)
+    public static IServiceCollection AddMessageBusServices(
+        this IServiceCollection services,
+        IConfigurationService configurationService)
     {
         services.AddScoped<IMessageBus, MessageBus.MessageBus>();
 

@@ -1,20 +1,19 @@
 ﻿using Demo.Application.Boundaries.Database;
 using Demo.Application.Domain;
 
-namespace Demo.Application.Airports.GetAll
+namespace Demo.Application.Airports.GetAll;
+
+public class GetAllUseCase : IGetAllUseCase
 {
-    public class GetAllUseCase : IGetAllUseCase
+    private readonly IAirportRepository _repository;
+
+    public GetAllUseCase(IAirportRepository repository)
     {
-        private readonly IAirportRepository _repository;
+        _repository = repository;
+    }
 
-        public GetAllUseCase(IAirportRepository repository)
-        {
-            _repository = repository;
-        }
-
-        public async Task<List<Airport>> Execute()
-        {
-            return await _repository.GetAll();
-        }
+    public async Task<List<Airport>> Execute()
+    {
+        return await _repository.GetAll();
     }
 }

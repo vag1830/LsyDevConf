@@ -1,9 +1,7 @@
-using System.Text.Json.Serialization;
 using Demo.Application.Boundaries.Configuration;
 using Demo.WebApi.Airports;
 using Demo.WebApi.DIExtensions;
 using Demo.WebApi.Services;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,16 +9,15 @@ IConfiguration configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
 
-builder.Services.Configure<JsonOptions>(options => 
-    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault | JsonIgnoreCondition.WhenWritingNull);
+var configurationService = new ConfigurationService(configuration);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAirportUseCases();
-builder.Services.AddMessageBusServices(new ConfigurationService(configuration));
+builder.Services.AddMessageBusServices(configurationService);
 
-builder.Services.AddScoped<IConfigurationService>(_ => new ConfigurationService(configuration));
+builder.Services.AddScoped<IConfigurationService>(_ => configurationService);
 
 var app = builder.Build();
 

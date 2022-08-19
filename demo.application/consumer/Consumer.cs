@@ -1,6 +1,6 @@
-﻿using Confluent.Kafka;
-using System;
+﻿using System;
 using System.Threading;
+using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
 
 class Consumer
@@ -23,7 +23,8 @@ class Consumer
         const string topic = "purchases";
 
         CancellationTokenSource cts = new CancellationTokenSource();
-        Console.CancelKeyPress += (_, e) => {
+        Console.CancelKeyPress += (_, e) =>
+        {
             e.Cancel = true; // prevent the process from terminating.
             cts.Cancel();
         };

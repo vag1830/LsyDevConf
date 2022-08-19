@@ -1,27 +1,27 @@
 ﻿using Demo.Application.Boundaries.Database;
 using Demo.Application.Domain;
 
-namespace Demo.Application.Airports.GetById
+namespace Demo.Application.Airports.GetById;
+
+public class GetByIdUseCase : IGetByIdUseCase
 {
-    public class GetByIdUseCase : IGetByIdUseCase
+    private readonly IAirportRepository _repository;
+
+    public GetByIdUseCase(IAirportRepository repository)
     {
-        private readonly IAirportRepository _repository;
+        _repository = repository;
+    }
 
-        public GetByIdUseCase(IAirportRepository repository)
+    public async Task<Airport> Execute(int id)
+    {
+
+        var result = await _repository.GetById(id);
+
+        if (result == null)
         {
-            _repository = repository;
+            throw new Exception($"Airport with Id: {id}, was not found");
         }
 
-        public async Task<Airport> Execute(int id) {
-
-            var result = await _repository.GetById(id);
-
-            if (result == null)
-            {
-                throw new Exception($"Airport with Id: {id}, was not found");
-            }
-
-            return result;
-        }
+        return result;
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace Demo.Application.Airports.Create.Parameters;
+﻿namespace Demo.Application.Airports.Update.Parameters;
 
-public class CreateInput
+public class UpdateInput
 {
     public string? IcaoCode { get; set; }
 

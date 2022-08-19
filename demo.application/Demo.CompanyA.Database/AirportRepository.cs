@@ -1,34 +1,42 @@
 ﻿using Demo.Application.Boundaries.Database;
-using Demo.Application.Boundaries.MessageBus;
 using Demo.Application.Domain;
 
-namespace Demo.Database
+namespace Demo.Database;
+
+public class AirportRepository : IAirportRepository
 {
-    public class AirportRepository : IAirportRepository
+    public async Task<List<Airport>> GetAll()
     {
-        public async Task<List<Airport>> GetAll()
-        {
-            return await Task.FromResult(Airports);
-        }
+        return await Task.FromResult(Airports);
+    }
 
-        public async Task<Airport?> GetById(int id)
-        {
-            var result = Airports
-                .FirstOrDefault(airport => airport.Id == id);
+    public async Task<Airport?> GetById(int id)
+    {
+        var result = Airports
+            .FirstOrDefault(airport => airport.Id == id);
 
-            return await Task.FromResult(result);
-        }
+        return await Task.FromResult(result);
+    }
 
-        public async Task Add(Airport airport)
-        {
-            airport.Id = Airports.Count + 1;
+    public async Task Add(Airport airport)
+    {
+        airport.Id = Airports.Count + 1;
 
-            Airports.Add(airport);
+        Airports.Add(airport);
 
-            await Task.CompletedTask; 
-        }
+        await Task.CompletedTask;
+    }
 
-        private List<Airport> Airports = new List<Airport> {
+    public async Task Update(Airport airport)
+    {
+        var existingAirport = Airports.First(a => a.Id == airport.Id);
+
+        existingAirport = airport;
+
+        await Task.CompletedTask;
+    }
+
+    private List<Airport> Airports = new List<Airport> {
             new Airport {
                 Id = 1,
                 IcaoCode = "LSZH",
@@ -40,5 +48,4 @@ namespace Demo.Database
                 Name = "Athens International Airport, Eleftherios Venizelos"
             }
         };
-    }
 }

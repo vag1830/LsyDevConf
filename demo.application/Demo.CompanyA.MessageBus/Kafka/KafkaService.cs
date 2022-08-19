@@ -30,6 +30,7 @@ public class KafkaService : IMessageService
     private void Send(string topic, Message<string, string> message)
     {
         using var producer = CreateProducer();
+
         producer.Produce(topic, message, deliveryReport =>
         {
             if (deliveryReport.Error.Code != ErrorCode.NoError)
