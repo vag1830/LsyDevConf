@@ -7,8 +7,6 @@ IConfiguration configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -59,5 +57,26 @@ app.MapPost("/airports", ([FromBody] Airport airport) =>
     return createdAirport;
 })
 .WithName("Create");
+
+app.MapPut("/airports/{id}", (int id, [FromBody] Airport airport) =>
+{
+    var updatedAirport = Database.GetAirportById(id);
+
+
+    if (configuration.GetValue<bool>("isEmailEnabled"))
+    {
+        var emailService = new EmailService(configuration);
+        emailService.Send(airport);
+    }
+
+    if (configuration.GetValue<bool>("isKafkaEnabled"))
+    {
+        var kafkaService = new KafkaService(configuration);
+        kafkaService.Send(airport);
+    }
+
+    return updatedAirport;
+})
+.WithName("Update");
 
 app.Run();

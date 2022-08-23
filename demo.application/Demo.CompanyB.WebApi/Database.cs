@@ -22,6 +22,15 @@ public class Database
         return airport;
     }
 
+    public static Airport UpdateAirport(int id, Airport airport)
+    {
+        var existingAirport = Airports.First(a => a.Id == id);
+
+        existingAirport = airport;
+
+        return airport;
+    }
+
     private static readonly List<Airport> Airports = new() {
             new Airport {
                 Id = 1,
