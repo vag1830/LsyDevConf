@@ -1,4 +1,4 @@
-﻿namespace Demo.MessageBus.Services;
+﻿namespace Demo.MessageBus.Email;
 
 public class EmailConfiguration
 {

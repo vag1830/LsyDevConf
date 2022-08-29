@@ -1,4 +1,4 @@
-﻿namespace Demo.MessageBus.Services;
+﻿namespace Demo.MessageBus.Kafka;
 
 public class KafkaConfiguration
 {
